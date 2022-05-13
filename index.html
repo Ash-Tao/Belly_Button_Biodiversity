@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="BellyButtonBiodiversity" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belly Button Biodiversity</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+</head>
+<style>
+.dropdownOptionCard{
+    padding: 8%;
+}
+.container{
+    margin: 0;
+    margin-bottom: 0;
+}
+.optiontitle{
+    font-size: 70%;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.card-header{
+    font-size: 70%;
+    font-weight: bold;
+    color: aliceblue;
+    background-color: rgb(27, 161, 187);
+    padding: 5%;  
+}
+.card-body{
+    font-size: 130%;
+    padding: 5%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+.jumbotron{
+    padding: 20px;
+}
+</style>
+<body>
+
+    <div class="container">
+        <!--  Creat a header -->
+        <div class="container">
+            <div class="jumbotron text-center"  style="background-color:rgb(27, 161, 187);
+                                                        background-position: center; background-size: cover;">
+                <h1 class = "text-white font-weight-bolder">Belly Button Biodiversity Dashboard</h1>
+                <p class = "text-white font-weight-light">Explore The Dataset & Discover About Belly Button Per Each Sample</p>
+            </div>
+        </div>
+
+        <!-- first row data, 2 boxes and 2 plots -->
+        <div class="container">
+            <div class="row " >
+
+                <!-- Left side option button & info table -->
+                <div class="col-lg-2 col-md-3 col-4">
+                    <!-- dropdown botton -->
+                    <div class="card" style="background-color:rgb(242, 241, 241);">
+                        <div class="dropdownOptionCard">
+                        <p class="optiontitle">Test Subject ID No.:</p>
+                        <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                    </div>
+                    </div>
+                    <!-- Information list  -->
+                    <div class="card" style="margin-top: 10px;">
+                        <p class="card-header">Demographic Info</p>
+                        <div id="sample-metadata" class="card-body"></div>
+                    </div>
+                </div>
+                <!-- Middle plot -->
+                <div class="col-lg-5 col-md-9 col-8">
+                    <div id="bar"></div>
+                </div>
+                <!-- Right side plot -->
+                <div class="col-lg-5 col-md-9 col-8">
+                    <div id="gauge"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                  <div id="bubble"></div>
+                </div>
+            </div>
+        </div>
+                   
+
+
+    </div>
+    <script src="app.js"></script>
+
+</body>
+</html>
