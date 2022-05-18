@@ -1,16 +1,16 @@
 # Belly_Button_Biodiversity
 
 ## Target
-Build an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels.
+Build an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels.<br/>
 
-The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
+The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.<br/>
 
  <img src="https://github.com/Ash-Tao/Belly_Button_Biodiversity/blob/main/OutPut/Full%20Screen.png"><br/>
 
 ## Step by Step Approch
 
 ### Step 1 Use the D3 library to read in `samples.json` from the URL
-* URL: `https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json`.
+* URL: `https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json`.<br/>
 
   ``` python 
   d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json").then(function (data) {
@@ -18,51 +18,44 @@ The dataset reveals that a small handful of microbial species (also called opera
   ```
 
 ### Step 2 Create a horizontal bar chart with a dropdown menu
-  * Display the top 10 OTUs found in that individual.
+  * Display the top 10 OTUs found in that individual.<br/>
   
-  * Use `sample_values` as the values for the bar chart.
+  * Use `sample_values` as the values for the bar chart.<br/>
 
-  * Use `otu_ids` as the labels for the bar chart.
+  * Use `otu_ids` as the labels for the bar chart.<br/>
 
-  * Use `otu_labels` as the hovertext for the chart.
+  * Use `otu_labels` as the hovertext for the chart.<br/>
 
     ![bar Chart](OutPut/Info&BarChart.png)
 
 ### Step 3 Create a bubble chart that displays each sample
 
-  * Use `otu_ids` for the x values.
+  * Use `otu_ids` for the x values.<br/>
 
-  * Use `sample_values` for the y values.
+  * Use `sample_values` for the y values.<br/>
 
-  * Use `sample_values` for the marker size.
+  * Use `sample_values` for the marker size.<br/>
 
-  * Use `otu_ids` for the marker colors.
+  * Use `otu_ids` for the marker colors.<br/>
 
-  * Use `otu_labels` for the text values.
+  * Use `otu_labels` for the text values.<br/>
 
   ![Bubble Chart](OutPut/BubbleChart.png)
 
-### Step 4 Display the sample metadata (individual's demographic information)
-   ![Bubble Chart](OutPut/Info&BarChart.png)
+### Step 4 Display the individual's demographic information
+Display each key-value pair from the metadata JSON object somewhere on the page.<br/>
+   ![Bubble Chart](OutPut/DemographicInfo.png)
 
-5. Display each key-value pair from the metadata JSON object somewhere on the page.
+## Files
+- [Output](https://github.com/Ash-Tao/Belly_Button_Biodiversity/tree/main/OutPut)<br/>
+  - BubbleChart.png<br/>
+  - DemographicInfo.png<br/>
+  - Full Screen.png<br/>
+  - GaugeChart .png<br/>
+  - Info&BarChart.png<br/>
 
-![hw](Images/hw03.png)
+- [app.js](https://github.com/Ash-Tao/Belly_Button_Biodiversity/blob/main/app.js)<br/>
 
-6. Update all the plots when a new sample is selected. Additionally, you are welcome to create any layout that you would like for your dashboard. An example dashboard is shown below:
+- [index.html](https://github.com/Ash-Tao/Belly_Button_Biodiversity/blob/main/index.html)<br/>
 
-![hw](Images/hw02.png)
-
-7. Deploy your app to a free static page hosting service, such as GitHub Pages. Submit the links to your deployment and your GitHub repo. Ensure that your repository has regular commits and a thorough README.md file
-
-## Advanced Challenge Assignment (Optional)
-
-The following task is advanced and therefore optional.
-
-* Adapt the Gauge Chart from <https://plot.ly/javascript/gauge-charts/> to plot the weekly washing frequency of the individual.
-
-* You will need to modify the example gauge code to account for values ranging from 0 through 9.
-
-* Update the chart whenever a new sample is selected.
-
-![Weekly Washing Frequency Gauge](Images/gauge.png)
+- [Data Sample](https://github.com/Ash-Tao/Belly_Button_Biodiversity/blob/main/samples.json)<br/>
