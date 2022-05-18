@@ -387,9 +387,8 @@ function updatePlotly(id) {
 
       // Create the bubble chart
       var data2 = [trace2];
-      var config = {responsive:true,
-      color:red}
-      Plotly.newPlot('bubble', data2,layout2,config)
+      var config = {responsive:true}
+      lotly.newPlot('bubble', data2,layout2,config)
   });
 };
 
