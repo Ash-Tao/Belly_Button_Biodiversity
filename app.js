@@ -370,7 +370,6 @@ function updatePlotly(id) {
               size : test.map(x => x.sample_values)[0]
           }   
       };
-
       // Create the layout
       var layout2 = {
           title: '<b>Bubble Chart</b>',
@@ -388,7 +387,8 @@ function updatePlotly(id) {
 
       // Create the bubble chart
       var data2 = [trace2];
-      var config = {responsive:true}
+      var config = {responsive:true,
+      color:red}
       Plotly.newPlot('bubble', data2,layout2,config)
   });
 };
